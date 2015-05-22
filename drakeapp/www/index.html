@@ -48,8 +48,11 @@
        </ion-pane>
      </ion-side-menu-content>
 
-     <ion-side-menu side="left">
-       <ion-content>
+     <ion-side-menu side="left" ng-controller="navCtrl">
+      <ion-header-bar class="bar-dark" ng-click="toggleLeft()">
+        <h1 class="title">Options</h1>
+      </ion-header-bar>
+      <ion-content>
          <ion-list>
            <ion-item>One</ion-item>
            <ion-item>Two</ion-item>
