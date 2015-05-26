@@ -1,8 +1,18 @@
-angular.module('drakeApp.home', [])
+angular.module('drakeApp.home', ['drakeApp.favorfact'])
 .controller('homeCtrl', function ($scope, $location, Favors, photoFactory, geo){
  
 
-  $scope.favors = [];
+  $scope.favors = [
+    { 
+      _id: 1,
+      topic: 'LEMME SEE DRAKE',
+      description: 'hey if somebody could take a pic of drake from the front row, that would be rad',
+      photos: ["http://upload.wikimedia.org/wikipedia/en/thumb/0/01/Golden_State_Warriors_logo.svg/838px-Golden_State_Warriors_logo.svg.png"],
+      hasPhotos: false,
+      votes: 0
+    }
+  
+  ];
   $scope.selectedFavor = Favors.selectedFavor;
 
   $scope.upVote = function(favor) {
@@ -21,7 +31,7 @@ angular.module('drakeApp.home', [])
     $location.path('/favordetails');
   }
 
-  $scope.updateFavors = function(){
+  /*$scope.updateFavors = function(){
     geo.getLocation(function(spot){
 
       var radius = 0.289855;
@@ -31,7 +41,7 @@ angular.module('drakeApp.home', [])
         $scope.favors = data;
       })
     })
-  };
+  };*/
 
   $scope.getPhoto = function(){
   	photoFactory.getPicture().then(function(image){
@@ -50,6 +60,6 @@ angular.module('drakeApp.home', [])
   };
 
   $scope.testVar = true;
-  $scope.updateFavors();
+  //$scope.updateFavors();
 });
 
