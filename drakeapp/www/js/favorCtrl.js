@@ -1,5 +1,5 @@
 angular.module('drakeApp.favor', [])
-.controller('favorCtrl', function ($scope, $window, $location, Favors, mapService){
+.controller('favorCtrl', function ($scope, $window, $location, Favors, mapService, $ionicHistory){
 
 	$scope.createFavor = function() {
 		var mapFavor = mapService.favor; //$scope.$$nextSibling.favor;
