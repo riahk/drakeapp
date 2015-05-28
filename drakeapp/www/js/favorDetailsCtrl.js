@@ -55,7 +55,7 @@ angular.module('drakeApp.favorDetails', [])
 
   $scope.getInstagramPictures= function() {
 
-    photoFactory.getInstagramPictures($scope.selectedFavor, function(data){
+    photoFactory.getInstagramPictures(Favors.selectedFavor, function(data){
 
       $scope.requests = data.map(function(photo){
         return {photos: photo.images.standard_resolution.url};
