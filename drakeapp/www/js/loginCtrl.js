@@ -12,9 +12,9 @@ angular.module('drakeApp.login', [])
 
   $scope.fbLogin = function() {
     console.log('fb login!!!');
-    /*return $http({
+    return $http({
       method: 'GET',
-      url: 'http://drakeapp.herokuapp.com/auth/facebook'
+      url: '/auth/facebook'
       //and then maybe redirect to home page after authenticating??
     })
     .success(function(data) {
@@ -23,7 +23,7 @@ angular.module('drakeApp.login', [])
     })
     .error(function() {
       console.log('error with authentication');
-    });*/
+    });
 
   }
 
