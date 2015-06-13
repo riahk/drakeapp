@@ -146,6 +146,27 @@ h2, h3, h4 {
   
 }
 
+.scrollToTop {
+  height: 40px;
+  width: 60px;
+
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  border-radius: 10px;
+
+  z-index: 1000;
+
+  /*display: none;*/
+  text-align: center;
+  color: white;
+  background-color: $calm;
+}
+
+.hidden {
+  display: none;
+}
+
 .set-height {
   max-height: 40px;
 }

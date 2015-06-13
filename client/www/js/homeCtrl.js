@@ -10,7 +10,24 @@
  */
 
 angular.module('phavr.home', [])
-.controller('homeCtrl', function($scope, $rootScope, $location, $http, $timeout, Favors, Photos, geo, mapService, uiGmapGoogleMapApi) {
+.controller('homeCtrl', function($scope, $rootScope, $location, $http, $timeout, $ionicScrollDelegate, Favors, Photos, geo, mapService, uiGmapGoogleMapApi) {
+
+  $scope.scrollTop = function() {
+    console.log('scroll to top!');
+    $ionicScrollDelegate.scrollTop(true);
+  };
+
+  $scope.scrollButton = false;
+
+  $scope.getScrollPosition = function() {
+    $scope.moveData = $ionicScrollDelegate.getScrollPosition().top;
+
+    if($scope.moveData >= 250) {
+      $scope.scrollButton = true;
+    } else if($scope.moveData < 250) {
+      $scope.scrollButton = false;
+    }
+  };
 
   //allows header bar to be shown
   $rootScope.login = true;
